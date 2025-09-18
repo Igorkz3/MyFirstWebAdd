@@ -20,7 +20,6 @@ public class User {
     @Column
     private String email;
 
-    // ======== Конструкторы ========
     public User() {
     }
 
@@ -29,7 +28,6 @@ public class User {
         this.email = email;
     }
 
-    // ======== Геттеры и сеттеры ========
     public Long getId() {
         return id;
     }
