@@ -1,7 +1,7 @@
 package app.model;
 
-
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
@@ -11,21 +11,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Name is required")
+    @Pattern(regexp = "^[A-Za-zА-Яа-яЁё\\s]+$", message = "Name can only contain letters and spaces")
     @Column(nullable = false)
     private String name;
 
+    @Email(message = "Invalid email format")
     @Column
     private String email;
 
-
-    public User() {}
+    // ======== Конструкторы ========
+    public User() {
+    }
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-
+    // ======== Геттеры и сеттеры ========
     public Long getId() {
         return id;
     }

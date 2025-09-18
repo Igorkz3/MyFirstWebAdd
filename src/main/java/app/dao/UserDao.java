@@ -1,15 +1,13 @@
 package app.dao;
 
 import app.model.User;
-
-import javax.persistence.*;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Transactional
 public class UserDao {
 
     @PersistenceContext
